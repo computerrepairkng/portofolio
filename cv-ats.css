@@ -1,0 +1,209 @@
+/* ============================================
+   CV ATS — Print-Ready Stylesheet
+   Clean, semantic, no graphics
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: #1a1a1a;
+    background: #f5f5f5;
+}
+
+.cv-page {
+    max-width: 210mm;
+    margin: 20px auto;
+    padding: 25mm 20mm 20mm 20mm;
+    background: #fff;
+    box-shadow: 0 2px 20px rgba(0,0,0,.1);
+}
+
+/* --- HEADER --- */
+.cv-header {
+    text-align: center;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 12px;
+    margin-bottom: 16px;
+}
+
+.cv-header h1 {
+    font-size: 20pt;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 2px;
+}
+
+.cv-subtitle {
+    font-size: 11pt;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 6px;
+}
+
+.cv-contact {
+    font-size: 9.5pt;
+    color: #444;
+    line-height: 1.6;
+}
+
+/* --- SECTIONS --- */
+.cv-section {
+    margin-bottom: 14px;
+}
+
+.cv-section h2 {
+    font-size: 11.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1.5px solid #333;
+    padding-bottom: 3px;
+    margin-bottom: 8px;
+    color: #1a1a1a;
+}
+
+.cv-section > p {
+    text-align: justify;
+    font-size: 10pt;
+}
+
+/* --- SKILLS GRID --- */
+.cv-skills-grid {
+    display: flex;
+    gap: 30px;
+}
+
+.cv-skills-grid ul {
+    flex: 1;
+    list-style: disc;
+    padding-left: 18px;
+    font-size: 10pt;
+}
+
+.cv-skills-grid li {
+    margin-bottom: 2px;
+}
+
+/* --- JOB ENTRIES --- */
+.cv-job {
+    margin-bottom: 10px;
+}
+
+.cv-job-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.cv-job-header h3 {
+    font-size: 10.5pt;
+    font-weight: 700;
+}
+
+.cv-date {
+    font-size: 9.5pt;
+    color: #555;
+    white-space: nowrap;
+}
+
+.cv-job-title {
+    font-style: italic;
+    font-size: 10pt;
+    color: #333;
+    margin-bottom: 2px;
+}
+
+.cv-job-division {
+    font-size: 9.5pt;
+    color: #555;
+    margin-bottom: 3px;
+}
+
+.cv-job ul {
+    list-style: disc;
+    padding-left: 18px;
+    font-size: 10pt;
+}
+
+.cv-job li {
+    margin-bottom: 1px;
+}
+
+/* --- PROJECTS --- */
+.cv-project {
+    margin-bottom: 8px;
+}
+
+.cv-project h3 {
+    font-size: 10.5pt;
+    font-weight: 700;
+}
+
+.cv-tech {
+    font-size: 9.5pt;
+    color: #555;
+    font-style: italic;
+    margin-bottom: 2px;
+}
+
+.cv-project > p:last-child {
+    font-size: 10pt;
+    text-align: justify;
+}
+
+/* --- LANGUAGE --- */
+.cv-lang {
+    list-style: none;
+    font-size: 10pt;
+}
+
+.cv-lang li {
+    margin-bottom: 2px;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+@media print {
+    body {
+        background: #fff;
+        font-size: 10pt;
+    }
+
+    .cv-page {
+        max-width: none;
+        margin: 0;
+        padding: 15mm 18mm;
+        box-shadow: none;
+    }
+
+    .cv-header h1 {
+        font-size: 18pt;
+    }
+
+    .cv-section h2 {
+        font-size: 11pt;
+    }
+
+    /* Prevent page breaks inside jobs/projects */
+    .cv-job, .cv-project {
+        page-break-inside: avoid;
+    }
+
+    /* Ensure sections don't orphan headers */
+    .cv-section h2 {
+        page-break-after: avoid;
+    }
+}
+
+@page {
+    size: A4;
+    margin: 10mm;
+}
