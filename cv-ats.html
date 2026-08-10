@@ -11,6 +11,14 @@
 
     <div class="cv-page">
 
+        <!-- LANGUAGE SWITCHER -->
+        <div class="lang-switcher no-print">
+            <button class="lang-btn" onclick="switchLanguage(this, 'en')">ENGLISH</button>
+            <button class="lang-btn" onclick="switchLanguage(this, 'zh')">CHINA</button>
+            <button class="lang-btn" onclick="switchLanguage(this, 'ja')">JAPAN</button>
+            <button class="lang-btn active" onclick="switchLanguage(this, 'id')">INDONESIA</button>
+        </div>
+
         <!-- HEADER -->
         <header class="cv-header">
             <h1>ANDRIAN KRISTIANTO</h1>
@@ -196,5 +204,20 @@
 
     </div>
 
+    <script>
+        function switchLanguage(btn, langCode) {
+            // Remove active class from all buttons
+            document.querySelectorAll('.lang-btn').forEach(function(el) {
+                el.classList.remove('active');
+            });
+            // Add active class to clicked button
+            btn.classList.add('active');
+
+            // Here you can add logic to translate the CV content or redirect to another page.
+            // Example:
+            // if (langCode === 'en') window.location.href = 'cv-ats-en.html';
+            console.log("Language changed to: " + langCode);
+        }
+    </script>
 </body>
 </html>

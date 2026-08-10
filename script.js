@@ -47,3 +47,82 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// Language dropdown toggle
+function toggleLangDropdown(event) {
+    document.getElementById("langDropdownContent").classList.toggle("show");
+    event.stopPropagation();
+}
+
+// Close the dropdown if the user clicks outside of it
+window.addEventListener('click', function(event) {
+    if (!event.target.matches('.lang-dropbtn') && !event.target.closest('.lang-dropbtn')) {
+        var dropdowns = document.getElementsByClassName("lang-dropdown-content");
+        for (var i = 0; i < dropdowns.length; i++) {
+            var openDropdown = dropdowns[i];
+            if (openDropdown.classList.contains('show')) {
+                openDropdown.classList.remove('show');
+            }
+        }
+    }
+});
+
+// Helper to get cookie
+function getCookie(name) {
+    let match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    if (match) return match[2];
+    return null;
+}
+
+// Restore language dropdown state on load
+document.addEventListener('DOMContentLoaded', () => {
+    const currentLang = getCookie('googtrans');
+    let langCode = 'id';
+    if (currentLang) {
+        const parts = currentLang.split('/');
+        if (parts.length > 2) langCode = parts[2];
+    }
+
+    const langMap = {
+        'id': 'INDONESIA',
+        'en': 'ENGLISH',
+        'zh-CN': 'CHINA',
+        'ja': 'JAPAN'
+    };
+    
+    if (langMap[langCode]) {
+        const dropBtnText = document.querySelector('#currentLangText');
+        if (dropBtnText) {
+            dropBtnText.innerHTML = 'Language: ' + langMap[langCode];
+        }
+        
+        document.querySelectorAll('.lang-dropdown-content a').forEach(a => {
+            a.classList.remove('active');
+            if (a.getAttribute('onclick').includes("'" + langCode + "'")) {
+                a.classList.add('active');
+            }
+        });
+    }
+});
+
+// Language switcher function for main navigation
+function switchMainLang(btn, langCode, langName) {
+    const currentCookie = getCookie('googtrans');
+    let currentLangCode = 'id';
+    if (currentCookie) {
+        const parts = currentCookie.split('/');
+        if (parts.length > 2) currentLangCode = parts[2];
+    }
+
+    if (currentLangCode === langCode) return;
+
+    if (langCode === 'id') {
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        document.cookie = "googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; domain=" + location.hostname + "; path=/;";
+    } else {
+        document.cookie = "googtrans=/id/" + langCode + "; path=/";
+        document.cookie = "googtrans=/id/" + langCode + "; domain=" + location.hostname + "; path=/";
+    }
+
+    window.location.reload();
+}

@@ -21,7 +21,22 @@
                 <a href="#experience">Pengalaman</a>
                 <a href="#portfolio">Portfolio</a>
                 <a href="#contact">Kontak</a>
-                <a href="cv-ats.html" class="btn-cv" target="_blank">Unduh CV</a>
+                <div class="lang-dropdown">
+                    <button class="lang-dropbtn notranslate" onclick="toggleLangDropdown(event)">
+                        <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        <span id="currentLangText">Language: INDONESIA</span> ▾
+                    </button>
+                    <div class="lang-dropdown-content" id="langDropdownContent">
+                        <a href="#" class="active" onclick="switchMainLang(this, 'id', 'INDONESIA'); return false;">INDONESIA</a>
+                        <a href="#" onclick="switchMainLang(this, 'en', 'ENGLISH'); return false;">ENGLISH</a>
+                        <a href="#" onclick="switchMainLang(this, 'zh-CN', 'CHINA'); return false;">CHINA</a>
+                        <a href="#" onclick="switchMainLang(this, 'ja', 'JAPAN'); return false;">JAPAN</a>
+                    </div>
+                </div>
+                <a href="cv-ats.html" class="btn-cv" target="_blank">
+                    <svg viewBox="0 0 24 24" width="16" height="16" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                    Unduh CV (ATS)
+                </a>
             </div>
             <div class="nav-toggle" id="navToggle">
                 <span></span><span></span><span></span>
@@ -505,6 +520,15 @@
     </footer>
 
     <script src="script.js"></script>
+
+    <!-- Google Translate Element (Hidden) -->
+    <div id="google_translate_element" style="display: none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'id', autoDisplay: false}, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>

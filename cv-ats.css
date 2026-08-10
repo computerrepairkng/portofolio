@@ -25,6 +25,37 @@ body {
     box-shadow: 0 2px 20px rgba(0,0,0,.1);
 }
 
+/* --- LANGUAGE SWITCHER --- */
+.lang-switcher {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.lang-btn {
+    padding: 6px 15px;
+    font-size: 9pt;
+    font-weight: 600;
+    color: #555;
+    background: #eaeaea;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+    background: #d4d4d4;
+    color: #1a1a1a;
+}
+
+.lang-btn.active {
+    background: #1a1a1a;
+    color: #fff;
+    border-color: #1a1a1a;
+}
+
 /* --- HEADER --- */
 .cv-header {
     text-align: center;
@@ -182,6 +213,10 @@ body {
         margin: 0;
         padding: 15mm 18mm;
         box-shadow: none;
+    }
+
+    .no-print {
+        display: none !important;
     }
 
     .cv-header h1 {
