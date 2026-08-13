@@ -596,6 +596,118 @@ body {
 }
 
 /* ============================================
+   SERTIFIKAT / CERTIFICATES
+   ============================================ */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.cert-card {
+    display: flex;
+    gap: 20px;
+    padding: 24px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.cert-card:hover {
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transform: translateY(-2px);
+}
+
+.cert-badge {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cert-badge img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cert-badge-icon {
+    background: var(--tag-bg);
+    color: var(--text-muted);
+}
+
+.cert-badge-icon svg {
+    width: 36px;
+    height: 36px;
+}
+
+.cert-badge-google {
+    background: #f0f4ff;
+    color: #4285f4;
+}
+
+.cert-info {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.cert-issuer {
+    font-size: 0.68rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    margin-bottom: 4px;
+}
+
+.cert-info h3 {
+    font-size: 0.95rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    line-height: 1.3;
+}
+
+.cert-desc {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.cert-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 0.78rem;
+    font-weight: 600;
+    color: var(--text);
+    padding: 6px 12px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--white);
+    transition: all 0.2s;
+    width: fit-content;
+    margin-top: 6px;
+}
+
+.cert-link:hover {
+    border-color: var(--text);
+    background: var(--tag-bg);
+}
+
+.cert-link svg {
+    flex-shrink: 0;
+}
+
+/* ============================================
    CONTACT
    ============================================ */
 .contact-grid {
@@ -722,6 +834,7 @@ body {
     .skills-grid { grid-template-columns: 1fr 1fr; }
     .project-card { grid-template-columns: 1fr; }
     .project-image { max-height: 220px; }
+    .cert-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
     .exp-item { grid-template-columns: 1fr; gap: 4px; }
 }
