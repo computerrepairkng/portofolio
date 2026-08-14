@@ -11,20 +11,12 @@
 
     <div class="cv-page">
 
-        <!-- LANGUAGE SWITCHER -->
-        <div class="lang-switcher no-print">
-            <button class="lang-btn" onclick="switchLanguage(this, 'en')">ENGLISH</button>
-            <button class="lang-btn" onclick="switchLanguage(this, 'zh')">CHINA</button>
-            <button class="lang-btn" onclick="switchLanguage(this, 'ja')">JAPAN</button>
-            <button class="lang-btn active" onclick="switchLanguage(this, 'id')">INDONESIA</button>
-        </div>
-
         <!-- HEADER -->
         <header class="cv-header">
             <h1>ANDRIAN KRISTIANTO</h1>
             <p class="cv-subtitle">Administrator Senior Infrastruktur & Jaringan IT</p>
             <p class="cv-contact">
-                085122299921 &bull; computerrepair.kng@gmail.com &bull; linkedin.com/in/andrianka &bull; andriankristianto.com<br>
+                085122299921 &bull; computerrepair.kng@gmail.com &bull; linkedin.com/in/andrianka<br>
                 Kab. Kuningan, Kec. Kramatmulya, Jawa Barat 45553
             </p>
         </header>
@@ -181,6 +173,18 @@
             </p>
         </section>
 
+        <!-- PENDIDIKAN -->
+        <section class="cv-section">
+            <h2>PENDIDIKAN</h2>
+            <div class="cv-job">
+                <div class="cv-job-header">
+                    <h3>SMK Pertiwi Kuningan</h3>
+                    <span class="cv-date">2004 — 2005</span>
+                </div>
+                <p class="cv-job-title">Teknik Mekanik Otomotif</p>
+            </div>
+        </section>
+
         <!-- SERTIFIKAT & LISENSI -->
         <section class="cv-section">
             <h2>SERTIFIKAT & LISENSI</h2>
@@ -188,45 +192,47 @@
             <div class="cv-job">
                 <div class="cv-job-header">
                     <h3>Networking Basics — Cisco Networking Academy</h3>
-                    <span class="cv-date">Verified</span>
                 </div>
-                <p class="cv-job-title">Sertifikasi dasar jaringan: TCP/IP, model OSI, subnetting, dan perangkat jaringan.</p>
+                <p class="cv-job-title">Sertifikat dari Cisco Networking Academy mencakup dasar-dasar jaringan komputer dan cara kerjanya.</p>
             </div>
 
             <div class="cv-job">
                 <div class="cv-job-header">
-                    <h3>Sertifikat Profesional — Kompetensi IT</h3>
-                </div>
-                <p class="cv-job-title">Sertifikat kompetensi profesional di bidang Teknologi Informasi dan Infrastruktur.</p>
-            </div>
-
-            <div class="cv-job">
-                <div class="cv-job-header">
-                    <h3>Sertifikat Profesional 2 — Kompetensi IT</h3>
-                </div>
-                <p class="cv-job-title">Sertifikat tambahan sebagai bukti kompetensi profesional dan pengembangan karir.</p>
-            </div>
-
-            <div class="cv-job">
-                <div class="cv-job-header">
-                    <h3>Cara Beriklan Dengan Tepat Di Google — Google Digital Marketing</h3>
+                    <h3>Cara Beriklan Dengan Tepat Di Google — Babastudio.com</h3>
                 </div>
                 <p class="cv-job-title">Pelatihan strategi periklanan digital dan Google Ads yang efektif.</p>
             </div>
-        </section>
 
-        <!-- PENDIDIKAN -->
-        <section class="cv-section">
-            <h2>PENDIDIKAN</h2>
             <div class="cv-job">
                 <div class="cv-job-header">
-                    <h3>[Nama Institusi Pendidikan / Universitas / SMK]</h3>
-                    <span class="cv-date">[Tahun Masuk] — [Tahun Lulus]</span>
+                    <h3>Operating Systems Basics — Cisco Networking Academy</h3>
                 </div>
-                <p class="cv-job-title">[Jurusan / Program Studi]</p>
+                <p class="cv-job-title">Sertifikat dasar mengenai instalasi, konfigurasi, dan pengelolaan sistem operasi (Windows & Linux).</p>
+            </div>
+
+            <div class="cv-job">
+                <div class="cv-job-header">
+                    <h3>JavaScript Essentials 1 — Cisco Networking Academy</h3>
+                </div>
+                <p class="cv-job-title">Sertifikat mengenai dasar pemrograman JavaScript.</p>
+            </div>
+
+            <div class="cv-job">
+                <div class="cv-job-header">
+                    <h3>Kursus & Pelatihan Kilat Teknisi Komputer & Jaringan — Lembaga Pendidikan Luar Sekolah (Kuningan)</h3>
+                </div>
+                <p class="cv-job-title">Lulus dengan predikat Memuaskan. Pelatihan perakitan, instalasi, dan jaringan komputer.</p>
+            </div>
+
+            <div class="cv-job">
+                <div class="cv-job-header">
+                    <h3>Team Work Building Berbasis ESQ & Hypnosis — LeMT</h3>
+                </div>
+                <p class="cv-job-title">Membangun karakter dan etos kerja dalam lingkungan profesional.</p>
             </div>
         </section>
 
+        <!-- PENDIDIKAN (Dummy Dihapus) -->
         <!-- BAHASA -->
         <section class="cv-section">
             <h2>BAHASA</h2>
@@ -238,20 +244,13 @@
 
     </div>
 
-    <script>
-        function switchLanguage(btn, langCode) {
-            // Remove active class from all buttons
-            document.querySelectorAll('.lang-btn').forEach(function(el) {
-                el.classList.remove('active');
-            });
-            // Add active class to clicked button
-            btn.classList.add('active');
-
-            // Here you can add logic to translate the CV content or redirect to another page.
-            // Example:
-            // if (langCode === 'en') window.location.href = 'cv-ats-en.html';
-            console.log("Language changed to: " + langCode);
+    <!-- Google Translate Element (Hidden) -->
+    <div id="google_translate_element" style="display: none;"></div>
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({pageLanguage: 'id', autoDisplay: false}, 'google_translate_element');
         }
     </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>

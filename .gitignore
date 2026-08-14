@@ -1,3 +1,6 @@
 # Abaikan folder foto mentah/pekerjaan lapangan yang tidak terpakai
 assets/img/JOB DESK-*/
 assets/img/Gawean/
+
+# Abaikan folder dokumen pribadi dan bahan lamaran
+Bahan Lamaran/

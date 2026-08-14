@@ -46,6 +46,33 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Image Modal Lightbox
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("imgModalSrc");
+    const closeBtn = document.querySelector(".img-modal-close");
+    const projectImages = document.querySelectorAll(".project-image img, .cert-badge img");
+
+    if (modal && modalImg && projectImages.length > 0) {
+        projectImages.forEach(img => {
+            img.addEventListener("click", function() {
+                modal.classList.add("show");
+                modalImg.src = this.src;
+            });
+        });
+
+        if (closeBtn) {
+            closeBtn.addEventListener("click", () => {
+                modal.classList.remove("show");
+            });
+        }
+
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.classList.remove("show");
+            }
+        });
+    }
+
 });
 
 // Language dropdown toggle
