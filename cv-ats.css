@@ -205,13 +205,14 @@ body {
 @media print {
     body {
         background: #fff;
-        font-size: 10pt;
+        font-size: 9.5pt;
+        line-height: 1.4;
     }
 
     .cv-page {
         max-width: none;
         margin: 0;
-        padding: 15mm 18mm;
+        padding: 0;
         box-shadow: none;
     }
 
@@ -219,20 +220,29 @@ body {
         display: none !important;
     }
 
+    .cv-header {
+        margin-bottom: 10px;
+        padding-bottom: 8px;
+    }
+
     .cv-header h1 {
-        font-size: 18pt;
+        font-size: 16pt;
+    }
+
+    .cv-section {
+        margin-bottom: 10px;
     }
 
     .cv-section h2 {
-        font-size: 11pt;
+        font-size: 10.5pt;
+        margin-bottom: 4px;
     }
 
-    /* Prevent page breaks inside jobs/projects */
     .cv-job, .cv-project {
+        margin-bottom: 6px;
         page-break-inside: avoid;
     }
 
-    /* Ensure sections don't orphan headers */
     .cv-section h2 {
         page-break-after: avoid;
     }
@@ -240,5 +250,5 @@ body {
 
 @page {
     size: A4;
-    margin: 10mm;
+    margin: 12mm 15mm;
 }
